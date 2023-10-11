@@ -4,6 +4,7 @@ main{
     width: 100%;;
 }
 
+
 .navbar{
     background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #177263);
 }
@@ -16,10 +17,10 @@ main{
     grid-row-gap: 20px;
 }
 
-h1{
+.name{
     text-align: center;
-    padding-bottom: 2rem;
-}
+    padding: 1rem 0rem;
+} 
 
 .container-fluid{
     display: flex;
@@ -38,7 +39,10 @@ h1{
 
 
 
-@media (max-width: 575.98px) {
+
+
+
+@media (max-width: 767px){
 
     .grid{
         display: grid;
@@ -49,16 +53,15 @@ h1{
     }
 
     .card{
-        width: 18rem;
-        margin: 0rem 2rem;
+        width: 16rem;
+        margin-left: 2rem;
     }
-
 }
 
-@media (max-width: 768px) { 
+@media (min-width: 768px) and (max-width: 1023px) { 
     .grid{
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 20px;
         grid-row-gap: 20px;
@@ -70,12 +73,16 @@ h1{
     }
 }
 
-@media (min-width: 992px) { 
+
+@media (min-width: 1024px) { 
     .grid{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 20px;
         grid-row-gap: 20px;
     } 
+    .card{
+        width: 18rem;
+    }
 }

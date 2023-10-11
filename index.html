@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <head>
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -19,20 +20,21 @@
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="./index.html">POKEDEX</a>
+                    <a class="navbar-brand fs-1" href="./index.html">POKEDEX</a>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
                         </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
-                        </form>
+                        <div id="form">
+                            <form class="d-flex" role="search">
+                                <input id="inputSearch" class="form-control mx-4" type="search"
+                                    placeholder="Search Pokemon" aria-label="Search">
+                                <button id="btnSearch" class="btn btn-success" type="button"
+                                    onclick="search()">Search</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -40,15 +42,19 @@
     </head>
     <main>
         <section class="container">
-            <article class="row pt-3">
+            <article id="article" class="row pt-3">
                 <ul id="ul-datos" class="grid"></ul>
-
-                <div class="col-md-6 d-flex justify-content-center my-4 w-100">
+                <div class="col-md-6 d-flex justify-content-center mt-5 w-100">
                     <button id="btnNext" type="button" class="btn btn-outline-success fs-1">Load more</button>
                 </div>
             </article>
+            <br>
+            <div id="articleSearch" class="d-flex justify-content-center py-5"></div>
+            <br><br><br>
+            </div>
         </section>
     </main>
+    <script src="search.js"></script>
     <script src="main.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
