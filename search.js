@@ -1,6 +1,7 @@
 const search = async () => {
     const input = document.getElementById('inputSearch').value
     datoInput = input.trim().toLowerCase()
+    datoInput=id;
 
     if (datoInput == "" || datoInput > 906) {
         alert("Pokemon no encontrado")
@@ -18,6 +19,16 @@ const search = async () => {
             window.location.reload()
         }
     }
+}
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+if(id == null){
+    
+}else{
+    console.log(id);
+    search(id)
 }
 
 const searchPokemon = (pokemons) => {

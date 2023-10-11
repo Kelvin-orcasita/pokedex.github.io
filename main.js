@@ -3,7 +3,8 @@ import { getPokemons } from "./pokemon.js";
 let next = 20;
 
 document.addEventListener("DOMContentLoaded", () => {
-      request(0, 20);
+    request(0, 20);
+  
 });
 
 
@@ -15,7 +16,6 @@ document.getElementById("btnNext").addEventListener("click", function () {
       request(back, next);
   }
 });
-
 
 const request = async (back, next)=>{
   

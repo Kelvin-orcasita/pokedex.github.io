@@ -9,7 +9,7 @@ export const datos = (id) => {
     const div = document.createElement("div")
     const divfooter = document.createElement("div")
     const a = document.createElement("a")
-    a.setAttribute("href", `${id.id}`); 
+    a.setAttribute("href", `index.html?id=${id.id}`); 
     
     div.className = "card bg-dark bg-opacity-25 shadow bg-body"
     li.className = "container-fluid card-body"
