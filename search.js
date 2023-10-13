@@ -61,7 +61,7 @@ const searchPokemon = (pokemons) => {
     const a = document.createElement("a")
     a.setAttribute("href", `#`);
 
-    div.className = "card bg-dark bg-opacity-25 shadow bg-body"
+    div.className = "card bg-dark bg-opacity-25 shadow bg-body margin"
     li.className = "container-fluid card-body"
     name.className = "name card-title my-2"
     imgPoke.className = "card-img-top border rounded-circle p-3"
