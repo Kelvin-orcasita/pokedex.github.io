@@ -10,10 +10,9 @@
 </head>
 
 <body>
-
     <head>
         <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
@@ -28,9 +27,9 @@
                             </li>
                         </ul>
                         <div id="form">
-                            <form class="d-flex" role="search">
-                                <input id="inputSearch" class="form-control mx-4" type="search"
-                                    placeholder="Search Pokemon" aria-label="Search">
+                            <form class="d-flex gap-3" role="search">
+                                <input id="inputSearch" class="form-control col-md-6" type="search"
+                                    placeholder="Search Pokemon ID o nombre " aria-label="Search">
                                 <button id="btnSearch" class="btn btn-success" type="button"
                                     onclick="search()">Search</button>
                             </form>
@@ -45,10 +44,14 @@
             <article id="article" class="row pt-3">
                 <ul id="ul-datos" class="grid"></ul>
                 <div class="col-md-6 d-flex justify-content-center mt-5 w-100">
-                    <button id="btnNext" type="button" class="btn btn-outline-success fs-1">Load more</button>
+                    <button id="btnLoad" type="button" class="btn btn-outline-success fs-1">Load more</button>
                 </div>
             </article>
-            <div id="articleSearch" class="d-flex justify-content-center pt-2 pb-3"></div>
+            <div id="articleSearch" class="d-flex justify-content-center pt-2"></div>
+            <div id="back-next" class="d-flex justify-content-center gap-2 pb-5 pt-4">
+                <button id="backBtn" class="btn btn-outline-success">Back</button>
+                <button id="nextBtn" class="btn btn-outline-success">Next</button>
+            </div>
         </section>
     </main>
     <script src="search.js"></script>

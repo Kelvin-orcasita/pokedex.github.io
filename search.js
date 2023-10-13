@@ -21,8 +21,7 @@ const search = async () => {
     }
 }
 
-const click = async (x) => {
-   
+const click = async (x) => {    
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`)
         const body = await response.json();
@@ -34,11 +33,11 @@ const click = async (x) => {
         alert("Pokemon no encontrado")
         window.location.href="./index.html"
     }
-
 }
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
+
 if(id == null){
     
 }else{
@@ -49,7 +48,9 @@ const searchPokemon = (pokemons) => {
 
     document.querySelector('#article').setAttribute("hidden", "none");
     document.getElementById('form').setAttribute("hidden", "none");
-    
+
+    document.getElementById('back-next').setAttribute("hidden", "block")
+        
     const article = document.getElementById('articleSearch')
     const li = document.createElement("li")
     const imgPoke = document.createElement("img")
@@ -60,7 +61,7 @@ const searchPokemon = (pokemons) => {
     const divfooter = document.createElement("div")
     const a = document.createElement("a")
     a.setAttribute("href", `#`);
-
+    
     div.className = "card bg-dark bg-opacity-25 shadow bg-body margin"
     li.className = "container-fluid card-body"
     name.className = "name card-title my-2"
@@ -127,4 +128,4 @@ const searchPokemon = (pokemons) => {
     divfooter.appendChild(type)
     divfooter.appendChild(generacion)
     li.appendChild(divfooter)
-};
+}

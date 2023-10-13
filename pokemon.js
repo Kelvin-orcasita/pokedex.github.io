@@ -1,7 +1,6 @@
 import { datos } from "./pintarPokemon.js";
 
 export const getPokemons = async (pokemons) => {
-
   const lista = pokemons.results
 
   lista.map(async id => {
