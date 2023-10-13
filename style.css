@@ -55,14 +55,14 @@ main{
         width: 16rem;
         margin-left: 2rem;
     }
-    .margin {
-        margin-bottom: 2rem;
-    }
 
     body{
         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
         height: auto;
         width: 100%;
+    }
+    .card{
+        margin-bottom: 7rem;
     }
 
 }
