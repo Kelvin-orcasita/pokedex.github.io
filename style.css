@@ -1,7 +1,7 @@
 main{
     background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     height: 100%;
-    width: 100%;;
+    width: 100%;
 }
 
 
@@ -42,7 +42,7 @@ main{
 
 
 
-@media (max-width: 767px){
+ @media (max-width: 767px){ /* movil  */
 
     .grid{
         display: grid;
@@ -56,9 +56,16 @@ main{
         width: 16rem;
         margin-left: 2rem;
     }
+
+    main{
+        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        height: 100vh;
+        width: 100%;
+    }
+
 }
 
-@media (min-width: 768px) and (max-width: 1023px) { 
+@media (min-width: 768px) and (max-width: 1023px) { /* Tables  */
     .grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -74,7 +81,7 @@ main{
 }
 
 
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) { /* desktop  */
     .grid{
         display: grid;
         grid-template-columns: repeat(3, 1fr);

@@ -1,11 +1,11 @@
 const search = async () => {
+ 
     const input = document.getElementById('inputSearch').value
     datoInput = input.trim().toLowerCase()
-    datoInput=id;
-
+    
     if (datoInput == "" || datoInput > 906) {
         alert("Pokemon no encontrado")
-        window.location.reload()
+        window.location.href="./index.html"
     } else {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${datoInput}`)
@@ -16,19 +16,33 @@ const search = async () => {
         } catch (err) {
             console.log(err);
             alert("Pokemon no encontrado")
-            window.location.reload()
+            window.location.href="./index.html"
         }
     }
 }
 
+const click = async (x) => {
+   
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`)
+        const body = await response.json();
+
+        searchPokemon(body)
+
+    } catch (err) {
+        console.log(err);
+        alert("Pokemon no encontrado")
+        window.location.href="./index.html"
+    }
+
+}
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 if(id == null){
     
 }else{
-    console.log(id);
-    search(id)
+    click(id)
 }
 
 const searchPokemon = (pokemons) => {
@@ -45,8 +59,7 @@ const searchPokemon = (pokemons) => {
     const div = document.createElement("div")
     const divfooter = document.createElement("div")
     const a = document.createElement("a")
-    const button = document.createElement("a")
-    a.setAttribute("href", `${pokemons.id}`);
+    a.setAttribute("href", `#`);
 
     div.className = "card bg-dark bg-opacity-25 shadow bg-body"
     li.className = "container-fluid card-body"
@@ -56,7 +69,6 @@ const searchPokemon = (pokemons) => {
     type.className = "card-text text-center rounded-4 p-1 px-3"
     generacion.className = "card-text text-center rounded-4 p-1 px-3"
     a.className = "text-decoration-none text-black"
-    button.className = "text-decoration-none text-black"
 
     let tipo = pokemons.types[0].type.name;
 
@@ -103,7 +115,6 @@ const searchPokemon = (pokemons) => {
     imgPoke.src = pokemons.sprites.other.home.front_default;
     type.textContent = `${pokemons.types[0].type.name}`.toUpperCase();
     divfooter.textContent = `Type:`
-    button.textContent = "Colsultar otro"
 
     imgPoke.style.backgroundColor = color + "93";
     type.style.backgroundColor = color;
