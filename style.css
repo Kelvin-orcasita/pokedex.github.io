@@ -67,8 +67,12 @@ h4{
         height: auto;
         width: 100%;
     }
-    .margin, #back-next{
-        margin-bottom: 2rem;
+    .margin{
+        margin-bottom: 1.8rem;
+    }
+
+    #back-next{
+        margin-bottom: 1rem;
     }
 
 }
