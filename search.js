@@ -22,34 +22,57 @@ const search = async () => {
 }
 
 const click = async (x) => {    
+    
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`)
         const body = await response.json();
 
         searchPokemon(body)
 
-    } catch (err) {
+    }catch (err) {
         console.log(err);
         alert("Pokemon no encontrado")
         window.location.href="./index.html"
     }
+    
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
+let id = urlParams.get("id");
 
 if(id == null){
     
 }else{
-    click(id)
+    click(parseInt(id))
+       
+   document.getElementById("backBtn").addEventListener("click", function () {
+        if(parseInt(id) !== 0){
+            id = parseInt(id) -1
+            click(id)
+            window.location.href=`./index.html?id=${id}`
+        }
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", function () {
+        if(parseInt(id) !== 0){
+            id = parseInt(id) +1
+            click(id)
+            window.location.href=`./index.html?id=${id}`
+        }
+   });
 }
 
 const searchPokemon = (pokemons) => {
 
+    if(pokemons.id > 1){
+        document.getElementById("nextBtn").style.display = 'block';
+        document.getElementById("backBtn").style.display = 'block';
+    }else{
+        document.getElementById("nextBtn").style.display = 'block';
+    }
+    
     document.querySelector('#article').setAttribute("hidden", "none");
     document.getElementById('form').setAttribute("hidden", "none");
-
-    document.getElementById('back-next').setAttribute("hidden", "block")
         
     const article = document.getElementById('articleSearch')
     const li = document.createElement("li")
@@ -128,4 +151,5 @@ const searchPokemon = (pokemons) => {
     divfooter.appendChild(type)
     divfooter.appendChild(generacion)
     li.appendChild(divfooter)
+   
 }

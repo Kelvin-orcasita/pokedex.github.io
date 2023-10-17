@@ -16,6 +16,10 @@ main{
     grid-row-gap: 20px;
 }
 
+h4{
+    font-size: 1.1rem;
+}
+
 .name{
     text-align: center;
     padding: 1rem 0rem;
@@ -33,15 +37,17 @@ main{
 }
 
 .card{
-    width: 20rem;
+    width: 16rem;
+    height: 21rem;
+}
+
+#backBtn, #nextBtn{
+    display: none;
 }
 
 
 
-
-
-
- @media (max-width: 767px){ /* movil  */
+@media (max-width: 767px){ /* movil  */
 
     .grid{
         display: grid;
@@ -61,8 +67,8 @@ main{
         height: auto;
         width: 100%;
     }
-    .margin{
-        margin-bottom: 7rem;
+    .margin, #back-next{
+        margin-bottom: 2rem;
     }
 
 }
@@ -77,11 +83,11 @@ main{
     }
 
     .card{
-        width: 18rem;
+        width: 16rem;
         margin: 0rem 2rem;
     }
     .margin{
-        margin-bottom: 7rem;
+        margin-bottom: 1.2rem;
     }
 }
 
@@ -94,7 +100,12 @@ main{
         grid-column-gap: 20px;
         grid-row-gap: 20px;
     } 
+
     .card{
-        width: 18rem;
+        width: 16rem;
+    }
+
+    .margin{
+        margin-bottom: 1.2rem;
     }
 }
