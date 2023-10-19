@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/pokemon-icon.png" type="image/x-icon">
     <title>POKEDEX</title>
 </head>
 
 <body>
+
     <head>
         <header>
             <nav class="navbar navbar-expand-lg">
@@ -19,13 +21,9 @@
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand fs-1" href="./index.html">POKEDEX</a>
+                    <a class="navbar-brand mb-2" href="./index.html"><img src="./img/pokemon-home.png" height="70px"
+                            alt="Pokemon"></a>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                            </li>
-                        </ul>
                         <div id="form">
                             <form class="d-flex gap-3" role="search">
                                 <input id="inputSearch" class="form-control col-md-6" type="search"
@@ -49,8 +47,8 @@
             </article>
             <div id="articleSearch" class="d-flex justify-content-center pt-2"></div>
             <div id="back-next" class="d-flex justify-content-center gap-2 pb-5">
-                <button id="backBtn" class="btn btn-outline-success">Back</button>
-                <button id="nextBtn" class="btn btn-outline-success">Next</button>
+                <button title="Anterior Pokemon" id="backBtn" class="btn btn-outline-success">Back</button>
+                <button title="Siguiente Pokemon" id="nextBtn" class="btn btn-outline-success">Next</button>
             </div>
         </section>
     </main>

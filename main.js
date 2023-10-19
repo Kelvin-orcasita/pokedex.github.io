@@ -4,8 +4,6 @@ let next = 20;
 
 document.addEventListener("DOMContentLoaded", () => {
   request(0, 20);
-  // document.getElementById("nextBtn").style.display = 'block';
-  // document.getElementById("backBtn").style.display = 'block';
 });
 
 document.getElementById("btnLoad").addEventListener("click", function () {
