@@ -84,6 +84,11 @@ if(id == null){
 
 const searchPokemon = (pokemons) => {
 
+    if (pokemons.id == 905) {
+        console.log(pokemons.id);
+        document.querySelector('#nextBtn').setAttribute("hidden", "none");
+    }
+    
     if(pokemons.id > 1){
         document.getElementById("nextBtn").style.display = 'block';
         document.getElementById("backBtn").style.display = 'block';
