@@ -15,6 +15,7 @@ document.getElementById("btnLoad").addEventListener("click", function () {
   }
 });
 
+
 const request = async (back, next)=>{
   try{
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${back}&limit=${next}`)

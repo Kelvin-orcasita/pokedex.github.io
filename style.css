@@ -20,6 +20,10 @@ h4{
     font-size: 1.1rem;
 }
 
+.texto-pequeño{
+    font-size: 0.8rem;
+}
+
 .name{
     text-align: center;
     padding: 1rem 0rem;
@@ -45,6 +49,12 @@ h4{
     display: none;
 }
 
+.margin{
+    width: 25rem !important;
+    height: 25rem !important;
+}
+
+
 
 
 @media (max-width: 767px){ /* movil  */
@@ -62,10 +72,6 @@ h4{
         margin: 0rem 0rem 1rem 3rem;
     }
 
-    #back-next {
-        margin-bottom: 3rem;
-    }
-
     .margin{
         margin-left: 0rem;
     }
@@ -75,6 +81,10 @@ h4{
         height: auto;
         width: 100%;
     }
+    .card-text, .type{
+        font-size: 0.8rem;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1023px) { /* Tables  */
@@ -94,6 +104,8 @@ h4{
     .margin{
         margin-left: 0rem;
     }
+    
+    
 }
 
 
@@ -114,4 +126,5 @@ h4{
     .margin{
         margin-left: 0rem;
     }
+
 }

@@ -1,60 +1,19 @@
-const search = async () => {
- 
-    const input = document.getElementById('inputSearch').value
-    datoInput = input.trim().toLowerCase()
+import { specie } from "./specie.js";
 
-
-    if(datoInput > 0){
-        // console.log("es un numero");
-        
-        if (datoInput == "" || datoInput > 906) {
-            alert("Pokemon no encontrado")
-            window.location.href="./index.html"
-        } else {
-            try {
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${datoInput}`)
-                const body = await response.json();
-
-                window.location.href=`./index.html?id=${datoInput}`
-
-            } catch (err) {
-                console.log(err);
-                alert("Pokemon no encontrado")
-                window.location.href="./index.html"
-            }
-        }
-    }else{
-        // console.log("NO un numero");
-        try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${datoInput}`)
-            const body = await response.json();
-            
-            let idInput = body.id
-            window.location.href=`./index.html?id=${idInput}`
-               
-        } catch (err) {
-            console.log(err);
-            alert("Pokemon no encontrado")
-            window.location.href="./index.html"
-        }
-     }
-         
-}
 
 const click = async (x) => {    
     
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`)
         const body = await response.json();
-
         searchPokemon(body)
+        specie(body.id)
 
     }catch (err) {
         console.log(err);
         alert("Pokemon no encontrado")
         window.location.href="./index.html"
     }
-    
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -104,21 +63,27 @@ const searchPokemon = (pokemons) => {
     const li = document.createElement("li")
     const imgPoke = document.createElement("img")
     const type = document.createElement("b")
-    const generacion = document.createElement("b")
     const name = document.createElement("h4")
     const div = document.createElement("div")
     const divfooter = document.createElement("div")
+    const divfooter2 = document.createElement("div")
     const a = document.createElement("a")
+    const peso = document.createElement("p")
+    const altura = document.createElement("p")
+    const b = document.createElement("b")
     a.setAttribute("href", `#`);
     
     div.className = "card bg-dark bg-opacity-25 shadow bg-body margin"
     li.className = "container-fluid card-body"
-    name.className = "name card-title my-2"
-    imgPoke.className = "card-img-top border rounded-circle p-3"
-    divfooter.className = "footerCard d-flex justify-content-evenly align-items-center fw-bold"
-    type.className = "card-text text-center rounded-4 p-1 px-3"
-    generacion.className = "card-text text-center rounded-4 p-1 px-3"
-    a.className = "text-decoration-none text-black"
+    name.className = "name card-title"
+    imgPoke.className = "card-img-top border rounded-circle p-3 w-50"
+    divfooter.className = "footerCard d-flex justify-content-evenly align-items-center gap-2"
+    type.className = "card-text text-center rounded-4 fw-bold p-1 px-3"
+    a.className = "d-flex justify-content-center imgPoke"
+    peso.className = "text-black h-25 texto-pequeño"
+    altura.className = "text-black h-25 texto-pequeño"
+    divfooter2.className = "descripcion"
+    b.className = "type"
 
     let tipo = pokemons.types[0].type.name;
 
@@ -164,7 +129,9 @@ const searchPokemon = (pokemons) => {
     name.textContent = `${pokemons.id} - ${pokemons.name}`.toUpperCase();
     imgPoke.src = pokemons.sprites.other.home.front_default;
     type.textContent = `${pokemons.types[0].type.name}`.toUpperCase();
-    divfooter.textContent = `Type:`
+    b.textContent = `Type:`
+    peso.textContent = `Weight: ${pokemons.weight} -`
+    altura.textContent = `Height: ${pokemons.height}`
 
     imgPoke.style.backgroundColor = color + "93";
     type.style.backgroundColor = color;
@@ -174,8 +141,14 @@ const searchPokemon = (pokemons) => {
     div.appendChild(li)
     a.appendChild(imgPoke)
     li.appendChild(name)
+    li.appendChild(divfooter2)
+    divfooter.appendChild(b)
     divfooter.appendChild(type)
-    divfooter.appendChild(generacion)
+    divfooter.appendChild(peso)
+    divfooter.appendChild(altura)
     li.appendChild(divfooter)
    
+    
+
+
 }
