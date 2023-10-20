@@ -78,7 +78,7 @@ const searchPokemon = (pokemons) => {
     name.className = "name card-title"
     imgPoke.className = "card-img-top border rounded-circle p-3 w-50"
     divfooter.className = "footerCard d-flex justify-content-evenly align-items-center gap-2"
-    type.className = "card-text text-center rounded-4 fw-bold p-1 px-3"
+    type.className = "card-text text-center rounded-4 fw-bold p-1 px-2"
     a.className = "d-flex justify-content-center imgPoke"
     peso.className = "text-black h-25 texto-pequeño"
     altura.className = "text-black h-25 texto-pequeño"
