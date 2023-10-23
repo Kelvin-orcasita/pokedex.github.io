@@ -70,6 +70,7 @@ h4{
     .card{
         width: 16rem;
         margin: 0rem 0rem 1rem 3rem;
+        height: auto;
     }
 
     .margin{
